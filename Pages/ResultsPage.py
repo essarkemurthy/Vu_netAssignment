@@ -26,8 +26,7 @@ class ResultsPage(BasePage):
         return results
 
     def validate_score(self, scores_input):
-        for index, key in enumerate(scores_input):
-            if scores_input[key] >= 0.07:
-                assert print(key, scores_input[key])
-                return True
-        return False
+        for key in scores_input.keys():
+            if scores_input[key] < 0.7:
+                return False
+        return True

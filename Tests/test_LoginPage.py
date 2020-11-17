@@ -16,4 +16,6 @@ class Test_Login(BaseTest):
         self.results_page = ResultsPage(self.driver)
         scores = self.results_page.get_results()
         final_result = self.results_page.validate_score(scores)
+        if final_result == False:
+            self.driver.save_screenshot(f"../screenshots/" + arg1['Testcase'] + ".png")
         assert final_result

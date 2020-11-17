@@ -9,7 +9,6 @@ class ReadExcelData:
 
     def get_data(self):
         raw_data = pandas.read_excel(io=self.path, sheet_name=self.sheet_name, header=0, dtype='str')
-        # "../testData/testdata_sites.xlsx"
         headers = list(raw_data.head())
         headers_size = len(headers)
         rows, columns = raw_data.shape
