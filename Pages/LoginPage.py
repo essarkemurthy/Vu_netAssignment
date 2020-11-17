@@ -1,6 +1,6 @@
 from Pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
-from config.configdata import TestData
+from utilities.readProperties import ReadConfig
 
 
 class LoginPage(BasePage):
@@ -16,12 +16,8 @@ class LoginPage(BasePage):
         # self.driver.get(TestData.base_url)
 
     """page action methods"""
-
-    # def get_login_page_title(self, title):
-    #     return self.get_title(title)
-
     def do_login(self, website, mail_id):
-        self.driver.get(TestData.base_url)
+        self.driver.get(ReadConfig.get_application_url())
         self.do_click(self.acceptCookie)
         self.do_send_keys(self.website_input_xpath, website)
         self.do_send_keys(self.email_input_xpath, mail_id)

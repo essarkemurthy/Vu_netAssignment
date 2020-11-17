@@ -2,7 +2,6 @@ import pytest
 from Pages.LoginPage import LoginPage
 from Pages.ResultsPage import ResultsPage
 from Tests.test_Base import BaseTest
-from config.configdata import TestData
 from utilities.ReadExcel import ReadExcelData
 
 

@@ -1,12 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from selenium import webdriver
 
 """ this is the super class for all Pages """
-
-
-# driver = webdriver.Chrome("")
 
 class BasePage:
     def __init__(self, driver):
@@ -20,7 +15,8 @@ class BasePage:
             print("not found", locator)
 
     def do_send_keys(self, locator, text):
-        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator)).send_keys(text)
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator)).send_keys(text)
+        # element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator)).clear()
         # try:
         #     if element:
         #         self.driver.find_element(locator).send_keys(text)
